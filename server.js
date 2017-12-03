@@ -14,6 +14,10 @@ var secret = require('./config/secret');
 var User = require('./models/user');
 var Category = require('./models/category');
 
+
+
+mongoose.Promise = global.Promise;
+
 mongoose.connect(secret.database, function(err){
   if(err){
     console.log(err);

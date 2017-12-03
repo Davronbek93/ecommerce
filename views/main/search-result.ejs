@@ -1,0 +1,26 @@
+<% layout('layout') -%>
+<div class="container">
+  <% if(data.length === 0){ %>
+    <h3>Result not found</h3>
+  <% } else {%>
+    <h3>Result for <%= query %></h3>
+
+    <div class="row">
+      <% for(var i=0;i<data.length; i++) { %>
+      <div class="span4">
+        <a href="/product/<%= products[i]._id %>">
+          <div class="thumbnail">
+            <img src="<%= products[i].image %>" alt="">
+            <div class="captiom">
+              <h3><%= products[i].name %></h3>
+              <p><%= products[i].category.name %></p>
+              <p><%= products[i].price %></p>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <% } %>
+    </div>
+  <% } %>
+</div>
